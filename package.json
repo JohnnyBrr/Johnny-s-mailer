@@ -1,0 +1,18 @@
+{
+  "name": "node-mailer",
+  "version": "1.0.0",
+  "description": "A mail sender with nodemailer and xlsx",
+  "main": "mailer.js",
+  "scripts": {
+    "send": "node mailer.mjs",
+    "verify": "node modules/authMailServer.mjs",
+    "count": "node modules/xlsxToArray.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "nodemailer": "^6.9.13",
+    "xlsx": "^0.18.5"
+  }
+}

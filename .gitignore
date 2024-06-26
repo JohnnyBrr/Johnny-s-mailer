@@ -1,0 +1,5 @@
+# Visual Studio Code workspace files
+*.code-workspace
+
+# Node modules
+node_modules/
