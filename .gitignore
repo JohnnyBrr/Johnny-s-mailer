@@ -3,6 +3,3 @@
 
 # Node modules
 node_modules/
-
-# Excel address book
-addressbook/addresses.xlsx

@@ -1,7 +1,7 @@
 import XLSX from 'xlsx';
 
 //* Excel file goes here
-const workbook = XLSX.readFile('addressbook/addresses.xlsx');
+const workbook = XLSX.readFile('addressbook/template.xlsx');
 let sheets = {};
 let emails = [];
 
