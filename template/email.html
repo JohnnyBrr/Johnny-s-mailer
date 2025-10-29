@@ -1,17 +1,84 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Test Email</title>
+    <style>
+        /* General resets */
+        body,table,td { font-family: Arial, sans-serif; font-size: 16px; color: #333333; }
+        img { border: 0; display: block; }
+        a { color: #1a73e8; text-decoration: none; }
+        /* Container */
+        .email-wrapper { width: 100%; background-color: #f2f4f6; padding: 20px 0; }
+        .email-content { width: 100%; max-width: 600px; margin: 0 auto; background: #ffffff; border-radius: 4px; overflow: hidden; }
+        .email-header { background: #1a73e8; color: #ffffff; padding: 20px; text-align: center; }
+        .email-body { padding: 20px; }
+        .button { display: inline-block; background: #1a73e8; color: #ffffff; padding: 12px 18px; border-radius: 4px; }
+        .muted { color: #6b6f76; font-size: 14px; }
+        .footer { padding: 16px 20px; font-size: 12px; color: #9aa0a6; text-align: center; }
+        /* Responsive */
+        @media only screen and (max-width: 420px) {
+            .email-body { padding: 16px; }
+            .email-header { padding: 16px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Preheader (short summary shown in inbox) -->
+    <span style="display:none;max-height:0;overflow:hidden;mso-hide:all;">
+        This is a simple test email.
+    </span>
 
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="x-apple-disable-message-reformatting">
-    <!--[if !mso]><!-->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!--<![endif]-->
-  </head>
+    <table role="presentation" class="email-wrapper" width="100%" cellpadding="0" cellspacing="0">
+        <tr>
+            <td align="center">
+                <table role="presentation" class="email-content" cellpadding="0" cellspacing="0">
+                    <!-- Header -->
+                    <tr>
+                        <td class="email-header">
+                            <h1 style="margin:0;font-size:20px;font-weight:600;">Test Email</h1>
+                        </td>
+                    </tr>
 
-  <body>
-    <h1>Hello World!</h1>
-  </body>
+                    <!-- Body -->
+                    <tr>
+                        <td class="email-body">
+                            <p style="margin:0 0 12px 0;">Hello,</p>
 
+                            <p style="margin:0 0 12px 0;">This is a simple HTML email template for testing purposes. It demonstrates a basic, email-client-friendly layout.</p>
+
+                            <p style="margin:0 0 20px 0;">
+                                <a href="#" class="button" target="_blank" rel="noopener">Primary Action</a>
+                            </p>
+
+                            <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border-top:1px solid #e6e9ee;padding-top:12px;">
+                                <tr>
+                                    <td style="vertical-align:top;padding-right:12px;">
+                                        <p style="margin:0;font-weight:600;">Details</p>
+                                        <p class="muted" style="margin:6px 0 0 0;">Quick summary or detail line for the test email.</p>
+                                    </td>
+                                    <td style="vertical-align:top;">
+                                        <p style="margin:0;font-weight:600;">When</p>
+                                        <p class="muted" style="margin:6px 0 0 0;">Now</p>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <p style="margin:18px 0 0 0;" class="muted">If you didn't expect this message, you can ignore it.</p>
+                        </td>
+                    </tr>
+
+                    <!-- Footer -->
+                    <tr>
+                        <td class="footer">
+                            <p style="margin:0 0 8px 0;">Company Name • 123 Test St • Test City</p>
+                            <p style="margin:0;"><a href="#" style="color:#9aa0a6;">Unsubscribe</a></p>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
 </html>

@@ -1,8 +1,7 @@
 import nodemailer from 'nodemailer';
 import emails from './modules/xlsxToArray.mjs';
-import { html , txt } from './modules/msgImport.mjs';
+import { html, txt } from './modules/msgImport.mjs';
 import { data } from './modules/authMailServer.mjs';
-
 
 async function main() {
   try {
@@ -10,16 +9,16 @@ async function main() {
       console.error('❌ No email address found');
       return;
     }
-    if (!html || html === "") {
+    if (!html || html === '') {
       console.error('❌ No html template found');
       return;
-    } else if (!txt || txt === "") {
+    } else if (!txt || txt === '') {
       console.error('❌ No plain text templates found');
       return;
     }
 
     const transporter = nodemailer.createTransport({
-    //   pool: true,
+      //   pool: true,
       host: data.host,
       port: data.port,
       secure: data.secure,
@@ -28,18 +27,53 @@ async function main() {
         pass: data.auth.pass,
       },
     });
-    const info = await transporter.sendMail({
-      from: `${data.sender.name} <${data.sender.email}>`,
-      bcc: emails,
-      //* ⬇ email subject goes here
-      subject: 'Test message',
-      html: html,
-      text: txt,
-    });
 
-    console.log('📤 Messege sent: ' + info.messageId);
-    console.log('✅ Accepted: ', info.accepted);
-    console.log('❌ Rejected: ', info.rejected);
+    emails.forEach((email) => {
+      transporter.sendMail(
+        {
+          from: `${data.sender.name} <${data.sender.email}>`,
+          //* ⬇ replyTo goes here if needed
+          // replyTo: '',
+          to: email,
+
+          //* ⬇ email subject goes here
+          subject: '❓',
+
+          //* ⬇ html message and plain text message go here
+          html: html,
+          text: txt,
+
+          //* ⬇ attachment goes here if needed
+          // attachments: [
+          //   {
+          //     path: "./template/attachments/example.pdf",
+          //   }
+          // ],
+
+          // //* ⬇ Headers go here (MailTrap)
+          // headers: {
+          //   'X-MT-Category': 'Marketing',
+          // },
+        },
+        (err, info) => {
+          let res = {};
+          if (err) {
+            res = {
+              email: email,
+              status: '❌ Failed',
+              error: err.message
+            };
+          } else {
+            res = {
+              email: email,
+              status: '✅ Sent',
+              messageId: info.messageId,
+            };
+          }
+          console.log(res);
+        }
+      );
+    });
   } catch (error) {
     console.error('❌ Error sending emails:', error);
   }

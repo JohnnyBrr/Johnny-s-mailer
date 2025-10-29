@@ -1,1 +1,24 @@
-Hello World!
+This is a simple test email.
+
+
+TEST EMAIL
+
+Hello,
+
+This is a simple HTML email template for testing purposes. It demonstrates a basic, email-client-friendly layout.
+
+Primary Action
+
+Details
+
+Quick summary or detail line for the test email.
+
+When
+
+Now
+
+If you didn't expect this message, you can ignore it.
+
+Company Name • 123 Test St • Test City
+
+Unsubscribe
